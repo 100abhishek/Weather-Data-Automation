@@ -1,34 +1,28 @@
-# Importing necessary libraries
-import requests
-from bs4 import BeautifulSoup
+# Real-Time Weather Data Extraction 🌦️
 
-# Enter city name
-city = "lucknow"
+This project extracts real-time weather data for any city using Python. The program scrapes weather information from Google, providing details like temperature, sky condition, and wind speed, without relying on external APIs.
 
-# Creating URL and making requests instance
-url = "https://www.google.com/search?q=" + "weather" + city
-html = requests.get(url).content
+---
 
-# Getting raw data using BeautifulSoup
-soup = BeautifulSoup(html, 'html.parser')
+## Features ✨
+- **Real-Time Data:** Fetches live weather updates for any city.  
+- **Detailed Information:** Provides temperature, time, sky description, and wind details.  
+- **No API Needed:** Utilizes web scraping to extract data directly from Google.  
 
-# Extracting the temperature
-temp = soup.find('div', attrs={'class': 'BNeawe iBp4i AP7Wnd'}).text
+---
 
-# Extracting the time and sky description
-str_ = soup.find('div', attrs={'class': 'BNeawe tAd8D AP7Wnd'}).text
-data = str_.split('\n')
-time = data[0]
-sky = data[1]
+## Technologies Used 🛠️
+1. **Python**  
+2. **Requests**  
+3. **BeautifulSoup (bs4)**  
 
-# Extracting other details
-listdiv = soup.findAll('div', attrs={'class': 'BNeawe s3v9rd AP7Wnd'})
-strd = listdiv[5].text
-pos = strd.find('Wind')
-other_data = strd[pos:]
+---
 
-# Printing the extracted data
-print("Temperature is:", temp)
-print("Time:", time)
-print("Sky Description:", sky)
-print(other_data)
+## Prerequisites 📋
+Ensure you have the following installed:  
+- Python 3.x  
+- pip (Python package manager)
+
+Install the required libraries:
+```bash
+pip install requests beautifulsoup4
