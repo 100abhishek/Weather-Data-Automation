@@ -1,6 +1,6 @@
 # Real-Time Weather Data Extraction 🌦️
 
-This project extracts real-time weather data for any city using Python. The program scrapes weather information from Google, providing details like temperature, sky condition, and wind speed, without relying on external APIs.
+This project extracts real-time-weather data for any city using Python. The program scrapes weather information from Google, providing details like temperature, sky condition, and wind speed, without relying on external APIs.
 
 ---
 
